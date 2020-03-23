@@ -14,6 +14,4 @@ class BankAccount
     @total -= amount
   end
 
-
-
 end
