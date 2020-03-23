@@ -15,4 +15,5 @@ describe BankAccount do
       expect(subject.total).to eq (400)
     end
   end
+
 end

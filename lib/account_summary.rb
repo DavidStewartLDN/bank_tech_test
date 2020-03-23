@@ -16,4 +16,11 @@ class AccountSummary
     @transaction_history.push(statement_line)
   end
 
+  def print_statement
+    transaction_history_headed = [].replace(@transaction_history)
+    header = "date || credit || debit || balance"
+    transaction_history_headed.unshift(header)
+    transaction_history_headed.join("\n")
+  end
+
 end
