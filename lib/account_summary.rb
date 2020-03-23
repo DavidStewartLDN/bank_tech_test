@@ -6,7 +6,8 @@ class AccountSummary
     @transaction_history = []
   end
 
-  def store_transaction(type, amount, date, total)
+  def store_transaction(type, amount, total)
+    date = Time.now.strftime("%d/%m/%Y")
     statement_line = date.to_s + "||" + amount.to_s + "|| ||" + total.to_s
     @transaction_history.push(statement_line)
   end
