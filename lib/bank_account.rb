@@ -10,6 +10,10 @@ class BankAccount
     @total += amount
   end
 
+  def withdraw(amount)
+    @total -= amount
+  end
+
 
 
 end

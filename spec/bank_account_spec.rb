@@ -7,4 +7,12 @@ describe BankAccount do
       expect(subject.total).to eq (1000)
     end
   end
+
+  describe " #withdraw" do
+    it "should deduct the amount given from the total value" do
+      subject.deposit(1000)
+      subject.withdraw(600)
+      expect(subject.total).to eq (400)
+    end
+  end
 end
