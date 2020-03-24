@@ -16,6 +16,7 @@ class BankAccount
 
   def withdraw(amount)
     @total -= amount
+    @statement.store_transaction("withdraw", amount, @total)
   end
 
   def print_statement
