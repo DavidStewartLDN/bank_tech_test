@@ -11,6 +11,7 @@ class BankAccount
 
   def deposit(amount)
     @total += amount
+    @statement.store_transaction("deposit", amount, @total)
   end
 
   def withdraw(amount)

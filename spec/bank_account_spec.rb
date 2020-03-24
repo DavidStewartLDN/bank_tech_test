@@ -20,6 +20,12 @@ describe BankAccount do
     it "should return account statement with line breaks" do
       expect{subject.print_statement}.to output("date || credit || debit || balance\n").to_stdout
     end
+
+    it "should return account statement with line breaks with deposit" do
+      date = Time.now.strftime("%d/%m/%Y")
+      subject.deposit(1000)
+      expect{subject.print_statement}.to output("date || credit || debit || balance\n#{date}||1000|| ||1000\n").to_stdout
+    end
   end
 
 end
