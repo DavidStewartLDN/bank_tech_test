@@ -49,8 +49,11 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-## Self-assessment
+## Future improvements
 
-Once you have completed the challenge and feel happy with your solution, here's a form to help you reflect on the quality of your code: https://docs.google.com/forms/d/1Q-NnqVObbGLDHxlvbUfeAC7yBCf3eCjTmz6GOqC9Aeo/edit
+Given more time and more requirements form the client, there are some things I would to improve:
 
-![Tracking pixel](https://githubanalytics.herokuapp.com/course/individual_challenges/bank_tech_test.md)
+* When using irb, hide information about the objects and classes inside the bank account to make user experience more pleasent.
+* To remove the use attribute_reader in transaction history for AccountSummary so that it is not accessible from outside the class. This is not an issue as such but controlling scope is important for encapsualtion and improves code quality.
+* Improve spacing of displayed statement so that statement is more visually appealing. This would be done by adding leading and lagging spaces around each item in the priont statement. this would require more logic and has not been requewsted by the client in the MVP, though.
+* Add if statements to see if there is enough money inside the account to allow a withdrawal. This has not been required in the accpetance criteria but is clearly a very common edge case. 
