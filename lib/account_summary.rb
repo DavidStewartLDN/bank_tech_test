@@ -17,7 +17,7 @@ class AccountSummary
   end
 
   def print_statement
-    transaction_history_headed = [].replace(@transaction_history)
+    transaction_history_headed = [].replace(@transaction_history).reverse()
     header = "date || credit || debit || balance"
     transaction_history_headed.unshift(header)
     transaction_history_headed.join("\n")
