@@ -16,4 +16,10 @@ describe BankAccount do
     end
   end
 
+  describe " #print_statement" do
+    it "should return account statement with line breaks" do
+      expect{subject.print_statement}.to output("date || credit || debit || balance\n").to_stdout
+    end
+  end
+
 end
