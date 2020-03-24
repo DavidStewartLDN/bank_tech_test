@@ -1,13 +1,30 @@
 # Bank tech test
 
-Today, you'll practice doing a tech test.
+Banking customers have been looking to have a new porgram that clearly manages there deposits and withdrawals. The owner of the back has therfore asked me to create a create a simple application that can track these transactions: deposits and withdrawals. The owner would also like to allow customers to, at any time, have their full bank statement printed out so that they can clearly see their transaction history.
 
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
+## The Approach
 
-You'll get to practice your OO design and TDD skills.
+During this tech test, I followed the Test-Driven Development process, this uses the `RED-GREEN-REFACTOR` code writing process is used. The test must be written before any code is written and a failure must be recieved from the testing library (RSpec in this case). Then the most basic and naive code is written to fufill the test so that it passes (GREEN) and then following this the code is refactored to increase conciseness. In this coding challenge I have aimed to 100 % test coverage so that all lines of code have been tested to mximise my confidnence in the code.
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+## How to use
 
+1. Fork and clone the repository
+2. Navigate into the parent file that contains spec and lib folders
+3. To run the softeware in the Interactive Ruby Shell `irb -r './lib/bank_account.rb'`
+4. Start by initializing a new bank account, with a name of your choosing `davids_account = BankAccount.new`
+5. Enjoy using you new account!
+
+You can use the follwing commands on your account:
+```
+Make a deposit:
+  irb(main):001:0> davids_account.deposit(500)
+
+Make a withdrawal:
+  irb(main):002:0> davids_account.withdraw(20)
+
+Print your statement:
+  irb(main):003:0> davids_account.print_statement
+```
 ## Specification
 
 ### Requirements
