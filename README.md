@@ -29,18 +29,6 @@ Print your statement:
 
 ## Process
 
-### Class Structure
-
-I have chosen to split this exercise into two classes: a BankAccount class handling depsoits and withdrawals, and a AccountSuammry class for storing transactions and printing a statement.
-
-| Objects | Methods |
-| ------------- | ------------- |
-| BankAccount  | .deposit(amount)  |
-|   | .withdraw(amount)  |
-| AccountSummary  | .store_transaction(type, amount, total)  |
-|  | .create_statement_line(type, amount, total, date) |
-|  | .print_statement  |
-
 ### User Stories
 ```
 As a customer,
@@ -56,14 +44,25 @@ I want to be able to get a summary of my bank account,
 So that I can check through all my transactions by date and work out when I became bankrupt.
 ```
 
+### Class Structure
+
+I have chosen to split this exercise into two classes: a BankAccount class handling depsoits and withdrawals, and a AccountSuammry class for storing transactions and printing a statement.
+
+| Objects | Methods |
+| ------------- | ------------- |
+| BankAccount  | .deposit(amount)  |
+|   | .withdraw(amount)  |
+| AccountSummary  | .store_transaction(type, amount, total)  |
+|  | .create_statement_line(type, amount, total, date) |
+|  | .print_statement  |
+
 ## Specification
 
-### Requirements
+## Tests
 
-* You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
-* Deposits, withdrawal.
-* Account statement (date, amount, balance) printing.
-* Data can be kept in memory (it doesn't need to be stored to a database or anything).
+To run the testing suit, run the command `rspec`
+
+If you have installed the gems correctly using `bundle install`, you should be able to get a response telling you that
 
 ### Acceptance criteria
 
@@ -79,11 +78,6 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
-## Tests
-
-To run the testing suit, run the command `rspec`
-
-If you have installed the gems correctly using `bundle install`, you should be able to get a response telling you that
 
 ## Future improvements
 
