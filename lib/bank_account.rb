@@ -1,7 +1,8 @@
-require_relative "account_summary.rb"
+# This controls the adding and deducting of money from the account
+
+require_relative 'account_summary.rb'
 
 class BankAccount
-
   attr_reader :total
 
   def initialize(statement: AccountSummary.new)
@@ -11,16 +12,15 @@ class BankAccount
 
   def deposit(amount)
     @total += amount
-    @statement.store_transaction("deposit", amount, @total)
+    @statement.store_transaction('deposit', amount, @total)
   end
 
   def withdraw(amount)
     @total -= amount
-    @statement.store_transaction("withdraw", amount, @total)
+    @statement.store_transaction('withdraw', amount, @total)
   end
 
   def print_statement
     puts @statement.print_statement
   end
-
 end
