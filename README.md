@@ -1,20 +1,21 @@
 # Bank tech test
 
-Banking customers have been looking to have a new porgram that clearly manages there deposits and withdrawals. The owner of the back has therfore asked me to create a create a simple application that can track these transactions: deposits and withdrawals. The owner would also like to allow customers to, at any time, have their full bank statement printed out so that they can clearly see their transaction history.
+Banking customers have been looking to have a new program that clearly manages their deposits and withdrawals. The owner of the bank has therefore asked me to create a simple application that can track these transactions: deposits and withdrawals. The owner would also like to allow customers to, at any time, have their full bank statement printed out so that they can clearly see their transaction history.
 
 ## The Approach
 
-During this tech test, I followed the Test-Driven Development process, this uses the `RED-GREEN-REFACTOR` code writing process is used. The test must be written before any code is written and a failure must be recieved from the testing library (RSpec in this case). Then the most basic and naive code is written to fufill the test so that it passes (GREEN) and then following this the code is refactored to increase conciseness. In this coding challenge I have aimed to 100 % test coverage so that all lines of code have been tested to mximise my confidnence in the code.
+During this tech test, I followed the Test-Driven Development process, this uses the `RED-GREEN-REFACTOR` code writing process is used. The test must be written before any code is written and a failure must be received from the testing library (RSpec in this case). Then the most basic and naive code is written to fufill the test so that it passes (GREEN) and then following this the code is refactored to increase conciseness. In this coding challenge I have aimed to 100 % test coverage so that all lines of code have been tested to maximise my confidence in the code.
 
 ## How to use
 
 1. Fork and clone the repository
 2. Navigate into the parent file that contains spec and lib folders
-3. To run the softeware in the Interactive Ruby Shell `irb -r './lib/bank_account.rb'`
-4. Start by initializing a new bank account, with a name of your choosing `davids_account = BankAccount.new`
-5. Enjoy using you new account!
+3. Run the command `bundle install` to install gems in the Gemfile.
+4. To run the software in the Interactive Ruby Shell `irb -r './lib/bank_account.rb'`
+5. Start by initializing a new bank account, with a name of your choosing such as `davids_account = BankAccount.new`
+6. Enjoy using you new account!
 
-You can use the follwing commands on your account:
+You can use the following commands on your account:
 ```
 Make a deposit:
   irb(main):001:0> davids_account.deposit(500)
@@ -25,14 +26,43 @@ Make a withdrawal:
 Print your statement:
   irb(main):003:0> davids_account.print_statement
 ```
+
+## Process
+
+### User Stories
+```
+As a customer,
+I want to deposit my money,
+So that I can store it in the bank
+
+As a customer,
+I want to withdraw my money,
+So that I can access and spend my money easily
+
+As a customer,
+I want to be able to get a summary of my bank account,
+So that I can check through all my transactions by date and work out when I became bankrupt.
+```
+
+### Class Structure
+
+I have chosen to split this exercise into two classes: a BankAccount class handling depsoits and withdrawals, and a AccountSuammry class for storing transactions and printing a statement.
+
+| Objects | Methods |
+| ------------- | ------------- |
+| BankAccount  | .deposit(amount)  |
+|   | .withdraw(amount)  |
+| AccountSummary  | .store_transaction(type, amount, total)  |
+|  | .create_statement_line(type, amount, total, date) |
+|  | .print_statement  |
+
 ## Specification
 
-### Requirements
+## Tests
 
-* You should be able to interact with your code via a REPL like IRB or the JavaScript console.  (You don't need to implement a command line interface that takes input from STDIN.)
-* Deposits, withdrawal.
-* Account statement (date, amount, balance) printing.
-* Data can be kept in memory (it doesn't need to be stored to a database or anything).
+To run the testing suit, run the command `rspec`
+
+If you have installed the gems correctly using `bundle install`, you should be able to get a response telling you that
 
 ### Acceptance criteria
 
